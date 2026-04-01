@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 export const Projects = () => {
   return (
-    <section id="projects" className="py-6 bg-body-tertiary min-vh-100 d-flex flex-column justify-content-center">
+    <section id="projects" className="py-6 bg-section-alternate min-vh-100 d-flex flex-column justify-content-center border-top border-secondary border-opacity-10 position-relative">
       <div className="container py-5">
         <SectionHeading title="Featured Projects" subtitle="Some of my recent work" />
         

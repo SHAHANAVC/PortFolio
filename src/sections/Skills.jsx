@@ -3,21 +3,8 @@ import { SKILLS } from '../data/portfolio_data';
 import { motion } from 'framer-motion';
 
 export const Skills = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.95, y: 20 },
-    visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
-  };
-
   return (
-    <section id="skills" className="py-6 min-vh-100 d-flex flex-column justify-content-center position-relative">
+    <section id="skills" className="py-6 bg-section-primary border-top border-secondary border-opacity-10 position-relative">
       <div className="container py-5">
         <SectionHeading title="My Skills" subtitle="Technologies and tools I work with" />
         
@@ -25,35 +12,29 @@ export const Skills = () => {
           {SKILLS.map((skillGroup, index) => (
             <div key={index} className="col-md-6 col-lg-4">
               <motion.div 
-                className="card h-100 border-0 glass-card rounded-4 p-4 p-xl-5 transition-all clickable"
-                whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
-                initial={{ opacity: 0, y: 30 }}
+                className="card h-100 border-secondary border-opacity-10 bg-body rounded-4 p-4 p-xl-5 transition-all hover-scale"
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.03)' }}
               >
                 <div className="card-body p-0">
-                  <h4 className="fw-bold mb-4 text-body d-flex align-items-center">
+                  <h4 className="fw-bold mb-4 hero-heading border-bottom border-secondary border-opacity-10 pb-3">
                     {skillGroup.category}
                   </h4>
                   
-                  <motion.div 
-                    className="d-flex flex-wrap gap-2"
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                  >
+                  <div className="d-flex flex-wrap gap-2">
                     {skillGroup.items.map((item, i) => (
-                      <motion.span 
+                      <span 
                         key={i} 
-                        variants={itemVariants} 
-                        className="badge bg-body-secondary text-body fs-6 fw-medium py-2 px-3 border border-secondary border-opacity-10 shadow-sm"
+                        className="badge bg-body-tertiary hero-subtext fs-6 fw-medium py-2 px-3 border border-secondary border-opacity-25 rounded-2 d-flex align-items-center gap-2"
                       >
-                        {item}
-                      </motion.span>
+                        <img src={item.icon} alt={item.name} width="18" height="18" style={{ objectFit: 'contain' }} />
+                        {item.name}
+                      </span>
                     ))}
-                  </motion.div>
+                  </div>
                 </div>
               </motion.div>
             </div>

@@ -14,7 +14,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="py-5 bg-body-tertiary text-center mt-auto border-top border-secondary border-opacity-10 transition-colors">
+    <footer className="py-3 bg-section-alternate text-center mt-auto border-top border-secondary border-opacity-10 transition-colors">
       <div className="container">
         <h4 className="fw-bolder mb-4 text-body fs-5 tracking-wide">SHAHANA</h4>
         <div className="d-flex justify-content-center gap-4 mb-4">

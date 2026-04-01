@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 export const useTheme = () => {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('portfolio-theme') || 'dark'; // Updated to default Dark Mode
+    return localStorage.getItem('portfolio-theme') || 'light'; // Default to light mode (white/blue)
   });
 
   useEffect(() => {

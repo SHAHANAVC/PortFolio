@@ -6,7 +6,7 @@ import { BsEnvelopeFill, BsGeoFill } from 'react-icons/bs';
 
 export const Contact = () => {
   return (
-    <section id="contact" className="py-6 position-relative min-vh-100 d-flex flex-column justify-content-center">
+    <section id="contact" className="py-6 position-relative min-vh-100 d-flex flex-column justify-content-center bg-section-primary border-top border-secondary border-opacity-10">
       <div className="container py-5">
         <SectionHeading title="Get In Touch" subtitle="Let's build something beautiful together." />
         
